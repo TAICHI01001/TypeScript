@@ -35,5 +35,6 @@ console.log(getData(myArray));
 myArray = deleteData(myArray, 1);
 console.log(getData(myArray));
 
+console.log(`Hello world git alias`);
 
 
