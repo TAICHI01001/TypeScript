@@ -1,40 +1,32 @@
-function addData(array: number[], data: number): number[] {
-    return [...array, data]
-}
-function getData(array: number[]): number[] {
-    return [...array]
-}
-function updateData(array: number[], index: number, newData: number): number[] {
-    if (index >= 0 && index < array.length) {
-        return array.map((array, i) => (i === index ? newData : array));
-    } else {
-        console.error("Index out of bounds");
-        return array
-    }
-}
-function deleteData(array: number[], index: number): number[] {
-    if (index >= 0 && index <= array.length) {
-        return array.filter((_, i) => i !== index)
-    }
-    else {
-        console.error("Index out of bounds");
-        return array;
-    }
+import { Array } from "./class/Array"
+import { LinkList } from "./class/linkList";
 
-}
+let myArray = new Array()
+let myLinkList = new LinkList()
+let myArray1: number[] = [112, 1121];
 
-let myArray: number[] = [];
+myArray1 = myArray.addData(myArray1, 3)
+console.log(myArray.getData(myArray1));
+myArray1 = myArray.updateData(myArray1, 0, 9)
+console.log(myArray.getData(myArray1));
+myArray1 = myArray.deleteData(myArray1,1)
+console.log(myArray.getData(myArray1));
 
-myArray = addData(myArray, 2);
-myArray = addData(myArray, 1);
-console.log(getData(myArray));
 
-myArray = updateData(myArray, 0, 8);
-console.log(getData(myArray));
 
-myArray = deleteData(myArray, 1);
-console.log(getData(myArray));
 
-console.log(`Hello world git alias`);
+
+
+
+// myArray = addData(myArray, 2);
+// myArray = addData(myArray, 1);
+// console.log(getData(myArray));
+
+// myArray = updateData(myArray, 0, 8);
+// console.log(getData(myArray));
+
+// myArray = deleteData(myArray, 1);
+// console.log(getData(myArray));
+
 
 
