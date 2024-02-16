@@ -1,8 +1,0 @@
-.menu{
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    background-color:red;
-    padding: 1rem;
-    color: white;
-}
