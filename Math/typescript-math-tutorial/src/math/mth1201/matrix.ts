@@ -13,4 +13,10 @@ export default class Matrix {
             }
         }
     }
+    set(row: number, col: number, value: number) {
+        this.data[row][col] = value;
+    }
+    get(row: number, col: number) {
+        return this.data[row][col];
+    }
 }
