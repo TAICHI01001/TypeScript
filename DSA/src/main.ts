@@ -1,24 +1,28 @@
-import { Users } from "./mock/userData"
-import express, { Request, Response } from "express"
 
-const server = express()
-const PORT = 3000
 
-async function main() {
-    server.get("/", (req: Request, res: Response) => {
-        res.status(200).json({
-            Users
-        }).end(() => {
-            console.log(Users)
-        }).end(() => {
-            console.table(Users)
-        })
-    })
-    server.listen(PORT, () => {
-        console.log(`Server listening on port ${PORT}`)
-    })
-}
-main()
+// import { Users } from "./mock/userData"
+// import express, { Request, Response } from "express"
+
+// const server = express()
+// const PORT = 3000
+
+// async function main() {
+//     server.get("/", (req: Request, res: Response) => {
+//         res.status(200).json({
+//             Users
+//         }).end(() => {
+//             console.log(Users)
+//         }).end(() => {
+//             console.table(Users)
+//         })
+//     })
+    
+//     server.listen(PORT, () => {
+//         console.log(`Server listening on port ${PORT}`)
+//     })
+// }
+
+// main()
 
 
 // console.table(...Users)
