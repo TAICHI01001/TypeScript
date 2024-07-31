@@ -29,6 +29,13 @@ export default function Home() {
     }
   }
   
+  const updateTodo = async (id: number, completed: boolean) => {
+    try{
+      await axios.put(`/api/todos/${id}`, {completed});
+      setTodos(todos.map(todo => todo.id === id ? {...todo, completed} : todo));
+    }catch(error){
+      console.error(error);
+    }
   return (
     <></>
   );
