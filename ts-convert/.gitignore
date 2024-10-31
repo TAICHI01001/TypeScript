@@ -1,0 +1,20 @@
+# node depedencies
+node_modules/
+
+# tsc output 
+dist/
+
+# setting editor vscode
+.vscode/
+.idea/
+
+# setting file || ignore log
+*.log
+npm-debug.log*
+
+# file Enviornment it's keeping secret data
+.env
+
+# option file output commit
+.DS_Store
+thumbs.db
