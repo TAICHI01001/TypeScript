@@ -19,3 +19,11 @@ model User{
   password String
   createAt DateTime @default(now())
 }
+
+model Book{
+  id        Int      @id @default(autoincrement())
+  title     String
+  author    String
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+}

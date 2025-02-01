@@ -1,11 +1,15 @@
 import express, { Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
+import {userRoute, bookRoute} from './route';
+
 
 const server = express();
 const port = 8088;
 const prisma = new PrismaClient();
 
 server.use(express.json());
+server.use(userRoute);
+server.use(bookRoute);
 
 server.get('/', (req: Request, res: Response) => {
     res.json({
@@ -13,22 +17,6 @@ server.get('/', (req: Request, res: Response) => {
         status: "ok",
     })
 });
-
-server.get('/users', async (req: Request, res: Response) => {
-    const users = await prisma.user.findMany();
-    res.json(users);
-})
-server.post('/users', async (req: Request, res: Response) => {
-    const { name, email, password } = req.body;
-    const newUser = await prisma.user.create({
-        data: {
-            name,
-            email,
-            password
-        }
-    })
-    res.json(newUser);
-})
 
 server.listen(port, () => {
     console.log(`Server running http://localhost/${port}`);
