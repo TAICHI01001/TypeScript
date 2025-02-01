@@ -1,3 +1,14 @@
+const myArray:number[] = [1, 2, 3, 4, 5]
+console.table(myArray);
+console.log(myArray);
+
+function newValue(myArray:number[],newValue:number):number[]{
+    myArray.push(newValue);
+    return myArray;
+}
+console.table(newValue(myArray,6));
+console.log(myArray);
+
 
 
 // import { Users } from "./mock/userData"
@@ -26,24 +37,6 @@
 
 
 // console.table(...Users)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import { Array } from "./class/Array"
 // import { LinkList } from "./class/LinkList";
