@@ -46,13 +46,27 @@ export default function Home() {
       }
     }
   }
+  
   return (
     <>
-    <div>
-      <h1>Todo List</h1>
-      <input type="text" value={newTodo} onChange={(e)=> setNewTodo(e.target.value)} />
-      <button onClick={addTodo}>Add Todo</button>
-    </div>
+      <div>
+        <h1>Todo List</h1>
+        <input type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
+        <button onClick={addTodo}>Add Todo</button>
+        <ul>
+          {todos.map(todo => (
+            <li key={todo.id}>
+              <input
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => updateTodo(todo.id, !todo.completed)}
+              />
+              {todo.title}
+              <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }
